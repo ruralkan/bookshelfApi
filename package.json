@@ -1,0 +1,31 @@
+{
+  "name": "bookshelfapi",
+  "version": "1.0.0",
+  "description": "The Bookshelf is a sample API  to apply BDD, TTD,  OpenAPI Specification with Swagger",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruralkan/bookshelfApi.git"
+  },
+  "keywords": [
+    "API",
+    "BDD",
+    "TDD",
+    "OpenAPI",
+    "swagger",
+    "node.js",
+    "express"
+  ],
+  "author": "Manuel Mejia Perales (ruralkan)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruralkan/bookshelfApi/issues"
+  },
+  "homepage": "https://github.com/ruralkan/bookshelfApi#readme",
+  "devDependencies": {
+    "cucumber": "^5.1.0"
+  }
+}
