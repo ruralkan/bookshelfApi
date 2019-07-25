@@ -81,6 +81,7 @@ Ideally you test your user stories in two ways:
 
 2. With TDD tests that confirm that the components work correctly
 
+
 ## OpenAPI Specification and Swagger
 
 The OpenAPI Specification, formerly known as the Swagger Specification, is the world’s standard for defining RESTful interfaces. The OAS enables developers to design a technology-agnostic API interface that forms the basis of their API development and consumption.

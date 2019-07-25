@@ -4,7 +4,16 @@
   "description": "The Bookshelf is a sample API  to apply BDD, TTD,  OpenAPI Specification with Swagger",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "bdd": "cucumber-js",
+    "test": "mocha --reporter progress utils/testSetup.js \"test/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch",
+    "prestart": "babel-node ./startMessage.js",
+    "start": "npm-run-all --parallel open:src lint:watch",
+    "open:src": "babel-node ./server.js",
+    "lint": "esw  apiScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel"
   },
   "repository": {
     "type": "git",
@@ -26,6 +35,35 @@
   },
   "homepage": "https://github.com/ruralkan/bookshelfApi#readme",
   "devDependencies": {
-    "cucumber": "^5.1.0"
+    "cucumber": "^5.1.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.5.5",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "express": "^4.17.1",
+    "localtunnel": "^1.9.2",
+    "mocha": "^6.1.4",
+    "npm-run-all": "^4.1.5",
+    "open": "^6.3.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "body-parser": "^1.19.0",
+    "express-winston": "^3.2.0",
+    "glob": "^7.1.4",
+    "log4js": "^4.5.1",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.5.14"
   }
 }
