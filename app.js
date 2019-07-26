@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 const indexRouter = require('./routes/index')
 const spidyRouter = require('./routes/spidy');
+const router = require('./routes/createRouter')()
 
 
 
@@ -23,7 +24,9 @@ module.exports = ({ logger, database }) => express()
 
 // Path routing
 .use(indexRouter)
-.use('/test', spidyRouter)
+.use('/api/test', spidyRouter)
+//  Connect all our routes to our application
+.use('/api', router)
 
 
 // Error handling

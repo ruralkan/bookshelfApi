@@ -1,10 +1,10 @@
+
 import {expect} from 'chai';
 import server from '../bin/server'
 
 
 const addr = server.address()
 const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`
-console.log(bind);
 
 
 describe('Our first test', () => {
@@ -26,4 +26,3 @@ describe('server working', () => {
         expect(bind).to.equal('port 3000')
     });
 });
-

@@ -1,5 +1,4 @@
-// index.js
-
+/*
 var expect = require('chai').expect
  var mongoose = require('mongoose');
 
@@ -51,7 +50,7 @@ describe('Test models and database CRUD operations', function() {
     it('Should retrieve data from test database', function(done) {
         //Look up the 'Mike' object previously saved.
         Book.find({title: 'Testing database'}, (err, title) => {
-          if(err) {throw err;}
+          if(err) {done( err);}
           expect(title).to.exist
           done();
         });
@@ -59,3 +58,4 @@ describe('Test models and database CRUD operations', function() {
   });
 
 });
+*/
