@@ -2,7 +2,9 @@
 
 const port = process.env.PORT || 3000
 const logger = require('../utils/logger.js')
-const app = require('../app')({logger})
+const database = require('../dataBase/createDataBase')({ logger,database})
+
+const app = require('../app')({logger, database})
 const server = require('http').createServer()
 server
     .on('request', app)

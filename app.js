@@ -7,14 +7,14 @@ const spidyRouter = require('./routes/spidy');
 
 
 // Create Express application
-module.exports = ({ logger }) => express()
+module.exports = ({ logger, database }) => express()
 // Install Middleware
 .use(bodyParser.urlencoded({ extended: true }))
 .use(bodyParser.json())
 .use((req, res, next) => {
   req.base = `${req.protocol}://${req.get('host')}`
   req.logger = logger
- // req.db = database
+  req.db = database
   return next()
 })
 .use(morgan('tiny'))
